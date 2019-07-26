@@ -1,0 +1,32 @@
+<header>
+  <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
+    <img src="https://s3.amazonaws.com/gupy5/production/companies/167/images/logo.jpg" height="100" />
+    <div class="container">
+      <a class="navbar-brand" [routerLink]='["/"]'>Solutis Vendas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+            <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
+          </li>
+          
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a class="nav-link text-dark" [routerLink]='["/produto"]'>Produto</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a class="nav-link text-dark" [routerLink]='["/cep"]'>CEP</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="!usuarioLogado()">
+            <a class="nav-link text-dark" [routerLink]='["/login"]'>Login</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
+            <a class="nav-item nav-link text-dark" [routerLink]='["/sair"]' (click)="sair()">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection":"Server=localhost;Port=5432;Username=solutis;Password=solutis;Database=QuickBuyDB;",
+    "QuickBuyDB": "server=localhost;uid=root;pwd=300198;database=QuickBuyDB"
+  }
+}
